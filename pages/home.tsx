@@ -17,7 +17,6 @@ const Home = () => {
     <Navigation active={Routes.home}>
       <div>
         <h1>Logged in</h1>
-        <button onClick={signOut}>Sign out</button>
       </div>
     </Navigation>
   );

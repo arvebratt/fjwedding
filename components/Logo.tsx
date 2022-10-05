@@ -1,10 +1,14 @@
-const Logo: React.FC<{ color?: string }> = ({ color = "currentColor" }) => {
+const Logo: React.FC<{ size: "sm" | "lg" }> = ({ size }) => {
+  const iconSize = {
+    sm: "w-10 h-10",
+    lg: "w-32 h-32",
+  };
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 538 546"
-      fill={color}
-      className="w-32"
+      className={`${iconSize[size]} fill-zinc-600`}
     >
       <g id="fe16d3a4-6ed5-44ec-b7f0-96ec5573bc36">
         <path

@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col gap-4 h-screen justify-center items-center bg-violet-100 text-zinc-600">
-        <Logo />
+        <Logo size="lg" />
         <CountDown />
         <form onSubmit={onSubmit} className="flex flex-col gap-2">
           <InputField
