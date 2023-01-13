@@ -1,13 +1,12 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
-import { AuthUserProvider } from "../context/AuthUserContext";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <AuthUserProvider>
-      <Component {...pageProps} />
-    </AuthUserProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: rgb(255 251 235);
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  font-family: "Kalam", cursive;
+}
+
+@layer components {
+  details[open] > summary > #summery-icon {
+    @apply rotate-180;
+  }
+}

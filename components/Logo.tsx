@@ -1,14 +1,21 @@
-const Logo: React.FC<{ size: "sm" | "lg" }> = ({ size }) => {
+const Logo: React.FC<{ size: "sm" | "md" | "lg" | "background" }> = ({
+  size,
+}) => {
   const iconSize = {
     sm: "w-10 h-10",
+    md: "w-24 h-24",
     lg: "w-32 h-32",
+    background:
+      "absolute hidden md:block w-1/2 max-w-[500px] left-1/2 top-1/2 -translate-x-1/2	-translate-y-1/2 z-0",
   };
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 538 546"
-      className={`${iconSize[size]} fill-zinc-600`}
+      className={`${iconSize[size]} ${
+        size === "background" ? "fill-violet-100/50" : "fill-zinc-600"
+      }`}
     >
       <g id="fe16d3a4-6ed5-44ec-b7f0-96ec5573bc36">
         <path
