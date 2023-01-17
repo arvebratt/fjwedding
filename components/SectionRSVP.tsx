@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
-import ModalRSVP from "./ModalRSVP";
+import DialogModal from "./DialogModal";
 
 const SectionRSVP = () => {
-  const [openModal, setOpenModal] = useState<"open" | "closed">("closed");
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const onProceed = () => {
+    console.log("waddap");
+  };
+
   return (
     <>
       <div className="bg-violet-100 text-center p-4 rounded-xl shadow-card shadow-violet-400 mr-2 mb-2">
@@ -15,16 +19,23 @@ const SectionRSVP = () => {
         </h2>
         <Button
           label="Anmäl ditt deltagande"
-          type="secondary"
-          onClick={() => setOpenModal(openModal === "open" ? "closed" : "open")}
+          version="secondary"
+          id="showDialogButton"
+          onClick={() => setOpenModal(true)}
+          // onClick={() => setOpenModal(openModal === "open" ? "closed" : "open")}
         />
       </div>
-      <ModalRSVP
+      <DialogModal
+        isOpened={openModal}
+        onProceed={onProceed}
+        onClose={() => setOpenModal(false)}
+      />
+      {/* <ModalRSVP
         modalState={openModal}
         toggleModal={() =>
           setOpenModal(openModal === "open" ? "closed" : "open")
         }
-      />
+      /> */}
     </>
   );
 };

@@ -13,7 +13,7 @@ export default function Home() {
       <div>
         <Button
           label="Fortsätt"
-          type="secondary"
+          version="secondary"
           onClick={() => router.push("/home")}
         />
       </div>

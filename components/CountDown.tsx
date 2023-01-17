@@ -1,17 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Time } from "../util/types";
 import { useTimeLeft } from "../util/helper_functions";
 
 const CountDown: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState<Time | null>(null);
   const weddingDate = "Jul 19, 2023 14:00:00";
+  const [timeLeft, setTimeLeft] = useState<Time | null>(
+    useTimeLeft(weddingDate)
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(useTimeLeft(weddingDate));
     }, 1000);
     return () => clearInterval(interval);
-  }, [timeLeft]);
+  }, []);
   return (
     <div>
       {timeLeft ? (
@@ -22,7 +24,7 @@ const CountDown: React.FC = () => {
           <p>{timeLeft.seconds}</p>
         </div>
       ) : (
-        <p>Not rendered</p>
+        <div className="h-6" />
       )}
     </div>
   );

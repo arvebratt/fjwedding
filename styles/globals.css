@@ -7,6 +7,10 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+body.modal-open {
+  overflow: hidden; /* see "modal-open" in Modal.tsx */
+}
+
 h1 {
   font-family: "Kalam", cursive;
 }
