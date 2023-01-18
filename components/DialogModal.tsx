@@ -7,11 +7,11 @@ import TextArea from "./TextArea";
 
 type Props = {
   isOpened: boolean;
-  onProceed: () => void;
+  // onProceed: () => void;
   onClose: () => void;
 };
 
-const DialogModal = ({ isOpened, onProceed, onClose }: Props) => {
+const DialogModal = ({ isOpened, onClose }: Props) => {
   const ref = useRef<HTMLDialogElement | null>(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const DialogModal = ({ isOpened, onProceed, onClose }: Props) => {
   }, [isOpened]);
 
   const proceedAndClose = () => {
-    onProceed();
+    // onProceed();
     onClose();
   };
 
@@ -49,10 +49,11 @@ const DialogModal = ({ isOpened, onProceed, onClose }: Props) => {
           för vem det gäller. Ni kommer motta mejl med mer info efter OSA-datum!
         </p>
         <form
-          name="rsvp"
-          id="rsvp"
-          method="post"
+          name="wedding-rsvp"
+          id="wedding-rsvp"
+          method="POST"
           data-netlify="true"
+          action="/home"
           data-netlify-honeypot="bot-field"
           className="flex flex-col justify-center items-center gap-2 px-2 md:px-48"
         >
@@ -91,7 +92,7 @@ const DialogModal = ({ isOpened, onProceed, onClose }: Props) => {
         <div className="flex items-center py-2 px-2 md:px-48">
           <TextArea
             name="preferences"
-            form="rsvp"
+            form="wedding-rsvp"
             label="Matpreferenser/Allergi (Vid fler anmälda specifiera vem det gäller)"
             placeholder="John doe: vegetariskt..."
           />
@@ -100,8 +101,8 @@ const DialogModal = ({ isOpened, onProceed, onClose }: Props) => {
           <Button
             version="secondary"
             type="submit"
-            form="rsvp"
-            onClick={proceedAndClose}
+            form="wedding-rsvp"
+            // onClick={proceedAndClose}
             label="Skicka"
           />
           <Button

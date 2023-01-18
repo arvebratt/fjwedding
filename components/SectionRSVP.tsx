@@ -4,9 +4,6 @@ import DialogModal from "./DialogModal";
 
 const SectionRSVP = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const onProceed = () => {
-    console.log("waddap");
-  };
 
   return (
     <>
@@ -27,7 +24,7 @@ const SectionRSVP = () => {
       </div>
       <DialogModal
         isOpened={openModal}
-        onProceed={onProceed}
+        // onProceed={onProceed}
         onClose={() => setOpenModal(false)}
       />
       {/* <ModalRSVP
