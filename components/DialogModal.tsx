@@ -54,6 +54,7 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
           method="POST"
           data-netlify="true"
           action="/home"
+          encType="application/x-www-form-urlencoded"
           data-netlify-honeypot="bot-field"
           className="flex flex-col justify-center items-center gap-2 px-2 md:px-48"
         >
