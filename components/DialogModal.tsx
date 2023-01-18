@@ -89,15 +89,13 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
             leftText="Nej"
             rightText="Ja"
           />
-        </form>
-        <div className="flex items-center py-2 px-2 md:px-48">
           <TextArea
             name="preferences"
             form="wedding-rsvp"
             label="Matpreferenser/Allergi (Vid fler anmälda specifiera vem det gäller)"
             placeholder="John doe: vegetariskt..."
           />
-        </div>
+        </form>
         <div className="flex justify-center items-center gap-2 my-4 px-2 md:px-48">
           <Button
             version="secondary"

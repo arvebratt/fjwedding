@@ -16,15 +16,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-1 relative w-full">
-      <span className="text-xl font-light text-zinc-600">{label}</span>
       <label
         htmlFor={name}
         className="inline-flex items-center space-x-2 cursor-pointer text-zinc-600"
       >
+        {label}
         <span className="text-xl font-light text-zinc-600">{leftText}</span>
         <span className="relative">
           <input
-            id={name}
             name={name}
             type="checkbox"
             className="hidden peer"
