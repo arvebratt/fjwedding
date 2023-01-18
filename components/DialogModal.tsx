@@ -57,7 +57,7 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
           data-netlify-honeypot="bot-field"
           className="flex flex-col justify-center items-center gap-2 px-2 md:px-48"
         >
-          <input type="hidden" name="form-name" value="ask-question" />
+          <input type="hidden" name="form-name" value="contact" />
           <InputField
             name="name"
             label="Ditt/Era för- och efternamn"
@@ -108,7 +108,7 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
           <Button
             version="secondary"
             type="reset"
-            form="rsvp"
+            form="wedding-rsvp"
             onClick={onClose}
             label="Avsluta"
           />

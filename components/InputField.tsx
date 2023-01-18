@@ -23,6 +23,7 @@ const InputField: React.FC<InputFieldProps> = ({
       </label>
       <input
         id={name}
+        name={name}
         placeholder={placeholder}
         {...rest}
         className={`peer text-xl font-light py-2 

@@ -23,6 +23,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       </label>
       <textarea
         id={name}
+        name={name}
         placeholder={placeholder}
         {...rest}
         className="peer text-xl font-light p-2 text-zinc-600 rounded border-2 border-solid border-amber-400 focus:outline-none focus:border-violet-400 hover:border-violet-400"
