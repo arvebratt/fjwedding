@@ -1,9 +1,39 @@
 import { faEnvelope, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import InputField from "./InputField";
 import TextArea from "./TextArea";
+import axios from "axios";
+
+// const encode = (data) => {
+//   return Object.keys(data)
+//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//     .join("&");
+// };
+
+interface IFormData {
+  name: string;
+  email: string;
+  number: string;
+  attending: "false" | "true";
+  preferences: string;
+}
+
+interface IFormDataPayload extends IFormData {
+  "form-name": string;
+}
+
+const encode = (data: IFormDataPayload) => {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(
+          data[key as keyof IFormDataPayload]
+        )}`
+    )
+    .join("&");
+};
 
 type Props = {
   isOpened: boolean;
@@ -13,6 +43,13 @@ type Props = {
 
 const DialogModal = ({ isOpened, onClose }: Props) => {
   const ref = useRef<HTMLDialogElement | null>(null);
+  const [formData, setFormData] = useState<IFormData>({
+    name: "",
+    email: "",
+    number: "",
+    attending: "false",
+    preferences: "",
+  });
 
   useEffect(() => {
     if (isOpened) {
@@ -23,6 +60,36 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
       document.body.classList.remove("modal-open");
     }
   }, [isOpened]);
+
+  function handleSubmit(e: React.FormEvent) {
+    const axiosConfig = {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    };
+    console.log("hej");
+
+    axios
+      .post(
+        "/",
+        encode({
+          "form-name": "wedding-rsvp",
+          ...formData,
+        }),
+        axiosConfig
+      )
+      .then(() => alert("Thank you, message sent!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({ "form-name": "contact", ...this.state }),
+    // })
+    //   .then(() => alert("Success!"))
+    //   .catch((error) => alert(error));
+
+    // e.preventDefault();
+  }
 
   const proceedAndClose = () => {
     // onProceed();
@@ -50,21 +117,21 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
         </p>
         <form
           name="wedding-rsvp"
-          id="wedding-rsvp"
-          method="POST"
+          method="dialog"
           data-netlify="true"
-          action="/home"
-          encType="application/x-www-form-urlencoded"
           data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center gap-2 px-2 md:px-48"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="ask-question" />
           <InputField
             name="name"
             label="Ditt/Era för- och efternamn"
             placeholder="John Doe, Jane Doe"
             icon={faUser}
             type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
           />
           <InputField
@@ -73,6 +140,10 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
             placeholder="john@doe.com"
             icon={faEnvelope}
             type="email"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             required
           />
           <InputField
@@ -81,6 +152,10 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
             placeholder="+467..."
             icon={faPhone}
             type="text"
+            value={formData.number}
+            onChange={(e) =>
+              setFormData({ ...formData, number: e.target.value })
+            }
             required
           />
           <Checkbox
@@ -88,30 +163,32 @@ const DialogModal = ({ isOpened, onClose }: Props) => {
             label="Kommer du/ni på bröllopet?"
             leftText="Nej"
             rightText="Ja"
+            // value={formData.attending}
+            // onChange={(e) =>
+            //   setFormData({ ...formData, attending: e.target.value })
+            // }
           />
           <TextArea
             name="preferences"
             form="wedding-rsvp"
             label="Matpreferenser/Allergi (Vid fler anmälda specifiera vem det gäller)"
             placeholder="John doe: vegetariskt..."
+            value={formData.preferences}
+            onChange={(e) =>
+              setFormData({ ...formData, preferences: e.target.value })
+            }
           />
+          <div className="flex justify-center items-center gap-2 my-4 px-2 md:px-48">
+            <Button version="secondary" type="submit" label="Skicka" />
+            {/* <Button
+              version="secondary"
+              type="reset"
+              form="wedding-rsvp"
+              onClick={onClose}
+              label="Avsluta"
+            /> */}
+          </div>
         </form>
-        <div className="flex justify-center items-center gap-2 my-4 px-2 md:px-48">
-          <Button
-            version="secondary"
-            type="submit"
-            form="wedding-rsvp"
-            // onClick={proceedAndClose}
-            label="Skicka"
-          />
-          <Button
-            version="secondary"
-            type="reset"
-            form="wedding-rsvp"
-            onClick={onClose}
-            label="Avsluta"
-          />
-        </div>
       </div>
     </dialog>
   );

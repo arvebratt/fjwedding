@@ -4,9 +4,7 @@ import { useTimeLeft } from "../util/helper_functions";
 
 const CountDown: React.FC = () => {
   const weddingDate = "Jul 19, 2023 14:00:00";
-  const [timeLeft, setTimeLeft] = useState<Time | null>(
-    useTimeLeft(weddingDate)
-  );
+  const [timeLeft, setTimeLeft] = useState<Time>(useTimeLeft(weddingDate));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,18 +12,15 @@ const CountDown: React.FC = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div>
-      {timeLeft ? (
-        <div className="flex gap-2">
-          <p>{timeLeft.days}</p>
-          <p>{timeLeft.hours}</p>
-          <p>{timeLeft.minutes}</p>
-          <p>{timeLeft.seconds}</p>
-        </div>
-      ) : (
-        <div className="h-6" />
-      )}
+      <div className="flex gap-2">
+        <p>{timeLeft.days}</p>
+        <p>{timeLeft.hours}</p>
+        <p>{timeLeft.minutes}</p>
+        <p>{timeLeft.seconds}</p>
+      </div>
     </div>
   );
 };
