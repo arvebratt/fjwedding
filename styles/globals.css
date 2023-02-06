@@ -1,18 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Herr+Von+Muellerhoff&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: rgb(255 251 235);
-  font-family: "Nunito", sans-serif;
+  background: rgb(237 233 254);
 }
 
 body.modal-open {
   overflow: hidden; /* see "modal-open" in Modal.tsx */
-}
-
-h1 {
-  font-family: "Kalam", cursive;
 }
 
 @layer components {

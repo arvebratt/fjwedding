@@ -9,7 +9,7 @@ const ImageCard = (props: ImageCardProps) => {
   return (
     <div
       className={`w-full rounded-lg shadow-card ${
-        shadowColor === "violet" ? "shadow-violet-400" : "shadow-amber-400"
+        shadowColor === "violet" ? "shadow-violet-200" : "shadow-amber-400"
       }`}
     >
       <img src={src} alt={alt} className="w-full relative rounded-lg" />

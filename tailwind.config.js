@@ -7,13 +7,13 @@ const boxShadow = {
   none: "0 0 0 0 rgba(0, 0, 0, 0)",
   button: `${rem(3)} ${rem(3)} 0 0 rgba(0, 0, 0, 0)`,
   "button-hover": `${rem(2)} ${rem(2)} 0 0 rgba(0, 0, 0, 0)`,
-  card: `${rem(10)} ${rem(10)} 0 0 rgba(0, 0, 0, 0)`,
+  card: `${rem(6)} ${rem(6)} 0 0 rgba(0, 0, 0, 0)`,
 };
 
 const fontFamily = {
+  fancy: ["Herr Von Muellerhoff", "cursive"],
+  normal: ["Cormorant Garamond", "serif"],
   sans: [
-    "Nunito",
-    "Kalam",
     "Arial",
     "Franklin Gothic Medium",
     "Franklin Gothic",

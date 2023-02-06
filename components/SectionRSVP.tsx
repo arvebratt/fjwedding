@@ -7,11 +7,9 @@ const SectionRSVP = () => {
 
   return (
     <>
-      <div className="bg-violet-100 text-center p-4 rounded-xl shadow-card shadow-violet-400 mr-2 mb-2">
-        <h1 className="text-3xl text-zinc-600 underline decoration-violet-400">
-          OSA
-        </h1>
-        <h2 className="text-xl font-extralight text-zinc-600 mb-4">
+      <div className="bg-violet-50 text-center p-4 rounded-xl shadow-card shadow-violet-200 mr-2 mb-2">
+        <h2 className="font-fancy text-4xl text-zinc-600">OSA</h2>
+        <h2 className="font-normal text-2xl font-extralight text-zinc-600 mb-4">
           Vänligen ge besked om du kan vara med och fira vår dag!
         </h2>
         <Button
@@ -19,20 +17,9 @@ const SectionRSVP = () => {
           version="secondary"
           id="showDialogButton"
           onClick={() => setOpenModal(true)}
-          // onClick={() => setOpenModal(openModal === "open" ? "closed" : "open")}
         />
       </div>
-      <DialogModal
-        isOpened={openModal}
-        // onProceed={onProceed}
-        onClose={() => setOpenModal(false)}
-      />
-      {/* <ModalRSVP
-        modalState={openModal}
-        toggleModal={() =>
-          setOpenModal(openModal === "open" ? "closed" : "open")
-        }
-      /> */}
+      <DialogModal isOpen={openModal} onClose={() => setOpenModal(false)} />
     </>
   );
 };

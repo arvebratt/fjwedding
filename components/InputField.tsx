@@ -18,24 +18,24 @@ const InputField: React.FC<InputFieldProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-1 relative w-full">
-      <label htmlFor={name} className="text-xl font-light text-zinc-600">
+      <label htmlFor={name} className="font-normal text-zinc-600">
         {label}
-        <input
-          name={name}
-          placeholder={placeholder}
-          {...rest}
-          className={`peer text-xl font-light py-2 
-        ${
-          icon ? "pl-[42px]" : "pl-2"
-        } pr-2 text-zinc-600 rounded border-2 border-solid border-amber-400 focus:outline-none focus:border-violet-400 hover:border-violet-400`}
-        />
-        {icon && (
-          <FontAwesomeIcon
-            icon={icon}
-            className="absolute bottom-0 mb-[14px] w-8 border-r-2 border-solid border-zinc-400 ml-[4px] text-xl text-amber-400 peer-hover:text-violet-400 peer-focus:text-violet-400"
-          />
-        )}
       </label>
+      <input
+        name={name}
+        placeholder={placeholder}
+        {...rest}
+        className={`peer font-normal font-light py-1 
+        ${
+          icon ? "pl-[32px]" : "pl-1"
+        } pr-2 text-zinc-600 rounded border border-solid border-zinc-300 focus:outline-none focus:border-violet-400 hover:border-violet-400 focus:invalid:border-red-500`}
+      />
+      {icon && (
+        <FontAwesomeIcon
+          icon={icon}
+          className="absolute bottom-0 mb-[10px] w-6 ml-[4px] text-zinc-300 peer-hover:text-zinc-600 peer-focus:text-zinc-600"
+        />
+      )}
     </div>
   );
 };
