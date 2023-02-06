@@ -1,38 +1,36 @@
-import { InputHTMLAttributes } from "react";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputHTMLAttributes, useState } from "react";
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
-  leftText: string;
-  rightText: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
-  name,
-  label,
-  leftText,
-  rightText,
-  ...rest
-}) => {
+const Checkbox: React.FC<CheckboxProps> = ({ name, label, ...rest }) => {
+  const [checked, setChecked] = useState<boolean>(false);
   return (
-    <div className="flex flex-col gap-1 relative w-full">
+    <div
+      className="block relative cursor-pointer select-none group"
+      onClick={() => setChecked(!checked)}
+    >
+      <input
+        name={name}
+        type="checkbox"
+        {...rest}
+        className="peer absolute opacity-0 cursor-pointer w-0 h-0"
+        onChange={() => null}
+        checked={checked}
+      />
+      <div className="absolute top-0 left-0 w-6 h-6 rounded border border-solid border-zinc-300 group-hover:border-zinc-600" />
+      <div className="hidden peer-checked:flex absolute top-0 left-0 w-6 h-6 justify-center items-center">
+        <FontAwesomeIcon icon={faCheck} className="text-violet-600 text-lg" />
+      </div>
       <label
         htmlFor={name}
-        className="inline-flex items-center space-x-2 cursor-pointer text-zinc-600"
+        className="ml-8 font-normal text-zinc-600 cursor-pointer"
       >
         {label}
-        <span className="text-xl font-light text-zinc-600">{leftText}</span>
-        <span className="relative">
-          <input
-            name={name}
-            type="checkbox"
-            className="hidden peer"
-            {...rest}
-          />
-          <div className="w-12 h-7 rounded-full bg-zinc-600 peer-checked:bg-green-600" />
-          <div className="absolute left-1 w-5 h-5 rounded-full shadow inset-y-1 peer-checked:right-1 peer-checked:left-auto bg-zinc-50" />
-        </span>
-        <span className="text-xl font-light text-zinc-600">{rightText}</span>
       </label>
     </div>
   );

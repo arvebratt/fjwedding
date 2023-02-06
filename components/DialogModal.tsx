@@ -4,6 +4,7 @@ import Button from "./Button";
 import InputField from "./InputField";
 import TextArea from "./TextArea";
 import { Dialog, Transition } from "@headlessui/react";
+import Checkbox from "./Checkbox";
 
 interface IFormData {
   name: string;
@@ -73,15 +74,16 @@ const DialogModal = ({ isOpen, onClose }: Props) => {
                     </p>
                     <form
                       onSubmit={onClose}
-                      name="rsvp"
+                      name="rsvpToWedding"
                       method="POST"
+                      action="/home"
                       data-netlify="true"
-                      data-netlify-honeypot="bot-field"
+                      className="flex flex-col gap-2 mt-4"
                     >
                       <input
                         type="hidden"
                         name="form-name"
-                        value="ask-question"
+                        value="rsvpToWedding"
                       />
                       <InputField
                         name="name"
@@ -107,24 +109,38 @@ const DialogModal = ({ isOpen, onClose }: Props) => {
                         type="text"
                         required
                       />
+                      <div className="flex flex-col gap-1 my-2">
+                        <Checkbox
+                          name="attending"
+                          label="Kommer ni kunna delta på bröllopet?"
+                        />
+                        <Checkbox
+                          name="busToWedding"
+                          label="Vill ni åka med i bussen till bröllopet?"
+                        />
+                        <Checkbox
+                          name="busFromWedding"
+                          label="Vill ni åka med i bussen efter bröllopet?"
+                        />
+                      </div>
                       <TextArea
                         name="preferences"
-                        form="wedding-rsvp"
                         label="Matpreferenser/Allergi (Vid fler anmälda specifiera vem det gäller)"
                         placeholder="John doe: vegetariskt..."
-                        value={formData.preferences}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            preferences: e.target.value,
-                          })
-                        }
                       />
-                      <div className="w-24 ml-1 mt-4">
+                      <div className="max-w-xs ml-1 mt-4 flex gap-2">
                         <Button
                           version="secondary"
                           type="submit"
                           label="Skicka"
+                          buttonSize="sm"
+                        />
+                        <Button
+                          version="primary"
+                          type="button"
+                          label="Avbryt"
+                          buttonSize="sm"
+                          onClick={onClose}
                         />
                       </div>
                     </form>

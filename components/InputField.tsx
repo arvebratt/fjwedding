@@ -28,7 +28,7 @@ const InputField: React.FC<InputFieldProps> = ({
         className={`peer font-normal font-light py-1 
         ${
           icon ? "pl-[32px]" : "pl-1"
-        } pr-2 text-zinc-600 rounded border border-solid border-zinc-300 focus:outline-none focus:border-violet-400 hover:border-violet-400 focus:invalid:border-red-500`}
+        } pr-2 text-zinc-600 rounded border border-solid border-zinc-300 focus:outline-none focus:border-violet-400 hover:border-violet-400`}
       />
       {icon && (
         <FontAwesomeIcon
