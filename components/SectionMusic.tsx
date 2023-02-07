@@ -1,29 +1,29 @@
 import { useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
-import RsvpModal from "./modal/RsvpModal";
+import MusicModal from "./modal/MusicModal";
 
-const SectionRSVP = () => {
+const SectionMusic = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   return (
     <>
-      <Card title="OSA">
+      <Card title="Önska Musik">
         <>
           <h2 className="font-normal text-2xl font-extralight text-zinc-600 mb-4">
-            Vänligen ge besked om du kan vara med och fira vår dag!
+            Om ni har någon låt som ni vill ska spelas under kvällen så kan ni
+            skicka en förfrågan här!
           </h2>
           <Button
-            label="Anmäl ditt deltagande"
+            label="Anmäl en låt"
             version="secondary"
-            id="showDialogButton"
             onClick={() => setOpenModal(true)}
           />
         </>
       </Card>
-      <RsvpModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      <MusicModal isOpen={openModal} onClose={() => setOpenModal(false)} />
     </>
   );
 };
 
-export default SectionRSVP;
+export default SectionMusic;

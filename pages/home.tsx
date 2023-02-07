@@ -4,6 +4,7 @@ import SectionFAQ from "../components/SectionFAQ";
 import SectionHero from "../components/SectionHero";
 import SectionImageGallery from "../components/SectionImageGallery";
 import SectionInfo from "../components/SectionInfo";
+import SectionMusic from "../components/SectionMusic";
 import SectionRSVP from "../components/SectionRSVP";
 import SectionTM from "../components/SectionTM";
 import SectionWhenWhere from "../components/SectionWhenWhere";
@@ -15,12 +16,6 @@ const Home = () => {
         <title>FJ wedding</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Herr+Von+Muellerhoff&display=swap"
-          rel="stylesheet"
-        /> */}
       </Head>
       <div className="lg:grid lg:grid-cols-5 lg:gap-2 mx-2 lg:mx-0">
         <div
@@ -35,8 +30,9 @@ const Home = () => {
           <SectionHero />
           <SectionRSVP />
           <SectionImageGallery />
-          <SectionWhenWhere />
+          <SectionMusic />
           <SectionTM />
+          <SectionWhenWhere />
           <SectionFAQ />
           <SectionInfo />
         </div>

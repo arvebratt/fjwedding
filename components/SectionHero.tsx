@@ -19,7 +19,7 @@ const SectionHero = () => {
         </div>
         <div className="max-w-xs">
           <ImageCard
-            src="/small-background.jpg"
+            src="/front.jpg"
             alt="picture of the couple"
             shadowColor="violet"
           />
