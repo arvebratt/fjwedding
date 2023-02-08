@@ -2,7 +2,7 @@ import ImageCard from "./ImageCard";
 
 const SectionTM = () => {
   return (
-    <div className="my-10 sm:my-20 flex flex-col-reverse sm:flex-row justify-center gap-8 items-center">
+    <div className="flex flex-col-reverse sm:flex-row justify-center gap-8 items-center">
       <div className="max-w-xs flex flex-col gap-10">
         <ImageCard src="petri.jpg" shadowColor="violet" />
         <ImageCard src="alex.jpg" shadowColor="violet" />
@@ -16,14 +16,14 @@ const SectionTM = () => {
           natten. Om ni vill anmäla tal eller dylikt så kontaktar ni dem med:
           <br />
           <br />
-          Mail{" "}
+          Mail:{" "}
           <a href="mailto: toastmasters@fjwedding.se">
             toastmasters@fjwedding.se
           </a>
           <br />
-          Alexander <a href="tel:0721558860">0721558860</a>
+          Telefon Alexander: <a href="tel:0721558860">0721558860</a>
           <br />
-          Ludvig <a href="tel:0721558860">0721558860</a>
+          Telefon Ludvig: <a href="tel:0721558860">0721558860</a>
           <br />
           <br />
           OSA på att anmäla tal är senast något datum 2023 för att våra toasters

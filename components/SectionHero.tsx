@@ -2,7 +2,7 @@ import ImageCard from "./ImageCard";
 
 const SectionHero = () => {
   return (
-    <div className="my-32 md:my-0 sm:h-screen sm:justify-center flex flex-col gap-10 items-center">
+    <div className="sm:justify-center flex flex-col gap-10 items-center">
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="text-center z-10 text-zinc-600">
           <div className="font-fancy text-zinc-600 leading-[160px] flex flex-col sm:flex-row justify-center items-center sm:items-baseline gap-2 sm:gap-5 pb-8">

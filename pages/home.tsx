@@ -26,7 +26,7 @@ const Home = () => {
           className="absolute lg:hidden top-0 left-0 w-screen h-screen z-0 bg-no-repeat"
           style={{ backgroundImage: "url(/top-row.svg)" }}
         />
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 flex flex-col gap-20 my-20">
           <SectionHero />
           <SectionRSVP />
           <SectionImageGallery />

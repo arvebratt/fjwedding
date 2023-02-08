@@ -1,28 +1,42 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { Disclosure, Transition } from "@headlessui/react";
 
 interface AccordionProps {
-  summary: string;
-  text?: string;
+  title: string;
+  panel: string;
 }
 
 const Accordion = (props: AccordionProps) => {
-  const { summary, text } = props;
+  const { title, panel } = props;
   return (
-    <details className="w-full">
-      <summary className="group text-zinc-600 italic font-light text-xl bg-violet-100 hover:bg-violet-200 rounded py-4 px-2 list-none flex justify-between gap-2 items-center cursor-pointer shadow-button shadow-violet-400">
-        {summary}
-        <FontAwesomeIcon
-          id="summery-icon"
-          icon={faChevronCircleDown}
-          className="text-2xl text-violet-300 group-hover:text-violet-400"
-        />
-      </summary>
-      <p className="pl-4 pr-2 mt-2 ml-1 rounded border-l-4 border-solid border-amber-400 bg-amber-100 text-xl font-extralight">
-        {text ??
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
-      </p>
-    </details>
+    <Disclosure>
+      {({ open }) => (
+        <>
+          <Disclosure.Button className="flex w-full justify-between items-center rounded-lg bg-violet-200 px-4 py-2 text-left text-lg font-normal text-zinc-600 hover:bg-violet-300 focus:outline-none focus-visible:ring focus-visible:ring-violet-500 focus-visible:ring-opacity-75">
+            <span>{title}</span>
+            <FontAwesomeIcon
+              icon={faChevronUp}
+              className={`${
+                open ? "rotate-180 transform" : ""
+              } text-lg text-violet-100`}
+            />
+          </Disclosure.Button>
+          <Transition
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
+            <Disclosure.Panel className="py-2 px-4 font-normal text-zinc-600 text-left">
+              {panel}
+            </Disclosure.Panel>
+          </Transition>
+        </>
+      )}
+    </Disclosure>
   );
 };
 
