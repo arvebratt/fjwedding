@@ -10,7 +10,7 @@ const SectionWhenWhere = () => {
       <p className="font-normal text-center italic text-2xl font-extralight text-zinc-600 mb-4">
         Efter registrering och OSA-datum kommer ni få ett mail med mer info!
       </p>
-      <div className="flex flex-col-reverse sm:flex-row justify-center sm:justify-between gap-8 items-center">
+      <div className="flex flex-col-reverse sm:flex-row justify-center sm:justify-evenly gap-8 items-center">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8967.815763666771!2d13.286492!3d55.8114!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8c48739fc2585c8b!2sEllinge%20Castle!5e0!3m2!1sen!2sse!4v1673445501152!5m2!1sen!2sse"
           width="300"
