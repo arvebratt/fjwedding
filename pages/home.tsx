@@ -8,6 +8,7 @@ import SectionMusic from "../components/SectionMusic";
 import SectionRSVP from "../components/SectionRSVP";
 import SectionTM from "../components/SectionTM";
 import SectionWhenWhere from "../components/SectionWhenWhere";
+import HoverAnimation from "../components/HoverAnimation";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <HoverAnimation />
       <div className="lg:grid lg:grid-cols-5 lg:gap-2 mx-2 lg:mx-0">
         <div
           className="hidden lg:block bg-repeat-y"

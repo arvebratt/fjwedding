@@ -33,7 +33,18 @@ module.exports = {
   theme: {
     boxShadow,
     fontFamily,
-    extend: {},
+    extend: {
+      keyframes: {
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { scale: "1 1.5" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "spin-slow": "rotate 20s infinite linear",
+      },
+    },
   },
   plugins: [],
 };
