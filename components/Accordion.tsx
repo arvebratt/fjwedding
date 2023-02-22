@@ -9,6 +9,27 @@ interface AccordionProps {
 
 const Accordion = (props: AccordionProps) => {
   const { title, panel } = props;
+  let display: Array<JSX.Element> = [];
+
+  const urlRegex = /(https?:\/\/[^\s]+)/g; // regex to match URLs
+  const matches = panel.split(urlRegex);
+
+  if (matches && matches.length > 0) {
+    matches.forEach((part) => {
+      if (part.length) {
+        const element = urlRegex.test(part) ? (
+          <a href={part} target="_blank">
+            {part}
+          </a>
+        ) : (
+          <p>{part}</p>
+        );
+        display.push(element);
+      }
+    });
+  }
+  console.log(display);
+
   return (
     <Disclosure>
       {({ open }) => (
@@ -30,8 +51,8 @@ const Accordion = (props: AccordionProps) => {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="py-2 px-4 font-normal text-zinc-600 text-left">
-              {panel}
+            <Disclosure.Panel className="py-2 px-4 font-normal text-zinc-600 text-left whitespace-pre-line">
+              {display}
             </Disclosure.Panel>
           </Transition>
         </>
