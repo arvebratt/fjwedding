@@ -15,20 +15,19 @@ const Accordion = (props: AccordionProps) => {
   const matches = panel.split(urlRegex);
 
   if (matches && matches.length > 0) {
-    matches.forEach((part) => {
+    matches.forEach((part, index) => {
       if (part.length) {
         const element = urlRegex.test(part) ? (
-          <a href={part} target="_blank">
+          <a href={part} target="_blank" key={index}>
             {part}
           </a>
         ) : (
-          <p>{part}</p>
+          <p key={index}>{part}</p>
         );
         display.push(element);
       }
     });
   }
-  console.log(display);
 
   return (
     <Disclosure>

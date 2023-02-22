@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Footer from "../components/Footer";
 import SectionFAQ from "../components/SectionFAQ";
 import SectionHero from "../components/SectionHero";
@@ -13,11 +12,6 @@ import HoverAnimation from "../components/HoverAnimation";
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>FJ wedding</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
       <HoverAnimation />
       <div className="lg:grid lg:grid-cols-5 lg:gap-2 mx-2 lg:mx-0">
         <div

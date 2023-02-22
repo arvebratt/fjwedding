@@ -23,6 +23,7 @@ const fontFamily = {
 };
 
 module.exports = {
+  mode: "jit",
   content: [
     // add this lines
     "./pages/*.{js,ts,jsx,tsx}",
