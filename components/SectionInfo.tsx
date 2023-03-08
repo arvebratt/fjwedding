@@ -36,16 +36,8 @@ const SectionInfo = () => {
               className="text-2xl text-violet-200 w-8"
             />
             <p className="text-xl font-normal text-zinc-600">
-              Alexander: 0721558860, Ludvig: 0721558860
-            </p>
-          </div>
-          <div className="flex justify-start gap-8 my-2">
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="text-2xl text-violet-200 w-8"
-            />
-            <p className="text-xl font-normal text-zinc-600">
-              toastmasters@fjwedding.se
+              Ludvig: <a href="tel:0721558860">0734424241</a> Alexander:{" "}
+              <a href="tel:0721558860">0721558860</a>
             </p>
           </div>
         </div>

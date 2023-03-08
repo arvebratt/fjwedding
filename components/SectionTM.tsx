@@ -12,18 +12,24 @@ const SectionTM = () => {
           Träffa våra Toastmasters!
         </h2>
         <p className="font-normal text-2xl font-extralight text-zinc-600 mb-4">
-          Alexander och Ludvig kommer leda oss genom den oförglömliga dagen och
+          Ludvig och Alexander kommer leda oss genom den oförglömliga dagen och
           natten. Om ni vill anmäla tal eller dylikt så kontaktar ni dem med:
           <br />
           <br />
-          Mail:{" "}
-          <a href="mailto: toastmasters@fjwedding.se">
-            toastmasters@fjwedding.se
+          Ludvig:
+          <br />
+          <a href="mailto:toastmasters@fjwedding.se">
+            ludvig.petri@hotmail.com
           </a>
           <br />
-          Telefon Alexander: <a href="tel:0721558860">0721558860</a>
+          <a href="tel:0721558860">0734424241</a>
           <br />
-          Telefon Ludvig: <a href="tel:0721558860">0721558860</a>
+          <br />
+          Alexander:
+          <br />
+          <a href="mailto:a.arvebratt@gmail.com">a.arvebratt@gmail.com</a>
+          <br />
+          <a href="tel:0721558860">0721558860</a>
           <br />
           <br />
           OSA på att anmäla tal är senast något datum 2023 för att våra toasters
