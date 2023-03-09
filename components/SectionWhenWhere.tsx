@@ -9,22 +9,27 @@ const SectionWhenWhere = () => {
           Vi vill börja med att säga att vi är fantastiskt glada att ni vill
           dela den här dagen med oss!
         </p>
-        <p className="font-normal text-center italic text-2xl font-extralight text-zinc-600 mb-6">
-          Efter registrering och OSA-datum kommer ni få ett mail med mer info!
-        </p>
-        <h3 className="font-fancy text-3xl text-zinc-600 -mb-2">Var?</h3>
+        <h3 className="font-fancy text-3xl text-zinc-600 -mb-2">Vigsel</h3>
         <p className="font-normal text-center text-2xl text-zinc-600">
-          Ellinge Slott
+          Vigsel i Västra Sallerups kyrka
+        </p>
+        <p className="font-normal text-center text-2xl text-zinc-600">
+          kl 14.00
+        </p>
+        <p className="font-normal text-center text-2xl text-zinc-600 mb-6">
+          Västra Sallerups Byaväg 15, 241 36 Eslöv
+        </p>
+        <h3 className="font-fancy text-3xl text-zinc-600 -mb-2">
+          Bröllopsfest
+        </h3>
+        <p className="font-normal text-center text-2xl text-zinc-600">
+          Bröllopsfest på Ellinge Slott
+        </p>
+        <p className="font-normal text-center text-2xl text-zinc-600">
+          ca. kl 15.30
         </p>
         <p className="font-normal text-center text-2xl text-zinc-600 mb-6">
           Ellinge Gård, 241 93 Eslöv
-        </p>
-        <h3 className="font-fancy text-3xl text-zinc-600 -mb-2">När?</h3>
-        <p className="font-normal text-center text-2xl text-zinc-600">
-          Onsdagen den 19 Juli 2023
-        </p>
-        <p className="font-normal text-center text-2xl text-zinc-600">
-          kl. 14:30
         </p>
       </div>
       <iframe

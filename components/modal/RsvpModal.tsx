@@ -15,10 +15,10 @@ const RsvpModal = ({ isOpen, onClose }: Props) => {
     <Modal title="Registrera ert deltagande" isOpen={isOpen} onClose={onClose}>
       <div className="mt-2">
         <p className="font-normal text-zinc-600">
-          Registrera er nedan och fyll i vis matpreferenser/allergier. För att
-          registrera fler gäster, skriv allas för-och efternamn i fältet nedan
-          med ett kommatecken emellan. Vid matpreferenser/allergier, specifiera
-          för vem det gäller. Ni kommer motta mejl med mer info efter OSA-datum!
+          Registrera er i formuläret nedan. För att registrera fler gäster,
+          skriv allas för- och efternamn i fältet nedan med ett kommatecken
+          emellan. Vid matpreferenser/allergier, specifiera för vem det gäller.
+          Ni kommer motta mejl med uppdatering angående bröllopet!
         </p>
         <form
           onSubmit={onClose}
@@ -57,10 +57,6 @@ const RsvpModal = ({ isOpen, onClose }: Props) => {
             <Checkbox
               name="attending"
               label="Kommer ni kunna delta på bröllopet?"
-            />
-            <Checkbox
-              name="busToWedding"
-              label="Vill ni åka med i bussen till bröllopet?"
             />
             <Checkbox
               name="busFromWedding"

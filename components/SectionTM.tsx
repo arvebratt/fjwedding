@@ -32,8 +32,9 @@ const SectionTM = () => {
           <a href="tel:0721558860">0721558860</a>
           <br />
           <br />
-          OSA på att anmäla tal är senast något datum 2023 för att våra toasters
-          ska kunna planera in allt så bra som möjligt!
+          OSA på att anmäla tal är senast{" "}
+          <p className="font-bold inline-block">fredagen den 7e Juli</p> för att
+          våra toasters ska kunna planera in allt så bra som möjligt!
         </p>
       </div>
     </div>
