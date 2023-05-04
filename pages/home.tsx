@@ -8,6 +8,8 @@ import SectionRSVP from "../components/SectionRSVP";
 import SectionTM from "../components/SectionTM";
 import SectionWhenWhere from "../components/SectionWhenWhere";
 import HoverAnimation from "../components/HoverAnimation";
+import SectionFun from "../components/SectionFun";
+import SectionGifts from "../components/SectionGifts";
 
 const Home = () => {
   return (
@@ -24,11 +26,13 @@ const Home = () => {
         />
         <div className="lg:col-span-3 flex flex-col gap-20 my-20">
           <SectionHero />
-          <SectionRSVP />
+          {/* <SectionRSVP /> */}
+          <SectionGifts />
           <SectionImageGallery />
           <SectionMusic />
           <SectionTM />
           <SectionWhenWhere />
+          <SectionFun />
           <SectionFAQ />
           <SectionInfo />
         </div>
